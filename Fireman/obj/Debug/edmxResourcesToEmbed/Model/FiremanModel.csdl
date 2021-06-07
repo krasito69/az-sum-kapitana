@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FiremenDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Fireman">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IncidentsPartiicipated" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="FiremenDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Firemen" EntityType="Self.Fireman" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+  </EntityContainer>
+</Schema>
